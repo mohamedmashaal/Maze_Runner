@@ -32,7 +32,7 @@ public class WinController {
     void initialize() {
     	ScoreStrategy scoreCal = (MenuController.mode.equalsIgnoreCase("rush")) ? new RushScore() : new SurvivalScore();
     	currentScore = scoreCal.getScore(GameEngine.getInstance().getTimer().getTimeMilliSeconds(), Player.getInstance());
-        score.setText("SCORE : " + new Double(currentScore).toString());
+        score.setText("SCORE : " + String.format("%.2f", new Double(currentScore)));
     }
 
     @FXML
